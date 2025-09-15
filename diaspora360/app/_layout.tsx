@@ -6,7 +6,6 @@ import "react-native-reanimated";
 import * as SplashScreen from "expo-splash-screen";
 import { useEffect, useState } from "react";
 
-// Keep splash visible until WebView finishes loading
 SplashScreen.preventAutoHideAsync();
 
 export default function RootLayout() {
@@ -23,7 +22,7 @@ export default function RootLayout() {
       <WebView
         style={styles.container}
         source={{ uri: "https://diaspora360.org/" }}
-        onLoadEnd={() => setIsReady(true)} // hide splash when WebView finishes loading
+        onLoadEnd={() => setIsReady(true)}
       />
       <StatusBar style="auto" />
     </View>
